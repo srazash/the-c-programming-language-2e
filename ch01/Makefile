@@ -21,6 +21,9 @@ charcount:
 linecount:
 	gcc -ansi linecount.c
 
+blanks:
+	gcc -ansi blanks.c
+
 run:
 	./a.out
 
