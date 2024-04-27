@@ -27,6 +27,12 @@ blanks:
 charsub:
 	gcc -ansi charsub.c
 
+wordcount:
+	gcc -ansi wordcount.c
+
+wpl:
+	gcc -ansi wpl.c
+
 run:
 	./a.out
 
