@@ -33,6 +33,9 @@ wordcount:
 wpl:
 	gcc -ansi wpl.c
 
+array:
+	gcc -ansi array.c
+
 run:
 	./a.out
 
