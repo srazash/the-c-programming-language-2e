@@ -36,6 +36,12 @@ wpl:
 array:
 	gcc -ansi array.c
 
+longestline:
+	gcc -ansi longestline.c
+
+longestlineext:
+	gcc -ansi longestlineext.c
+
 run:
 	./a.out
 
