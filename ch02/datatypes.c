@@ -20,9 +20,9 @@ main()
     printf("USHRT_MAX -> %u\n", USHRT_MAX);
 
     long li; /* a long integer, larger than an `int` */
-    printf("LONG_MIN -> %d\n", LONG_MIN);
-    printf("LONG_MAX -> %d\n", LONG_MAX);
-    printf("LONG_MAX -> %u\n", ULONG_MAX);
+    printf("LONG_MIN -> %ld\n", LONG_MIN);
+    printf("LONG_MAX -> %ld\n", LONG_MAX);
+    printf("LONG_MAX -> %lu\n", ULONG_MAX);
 
     float f; /* single precision floating pointy value */
     printf("FLT_MIN -> %f\n", FLT_MIN);

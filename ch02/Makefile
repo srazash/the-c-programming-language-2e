@@ -3,6 +3,9 @@ MAKEFLAGS += --silent
 datatypes:
 	gcc -ansi datatypes.c
 
+constants:
+	gcc -ansi constants.c
+
 run:
 	./a.out
 
