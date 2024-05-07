@@ -6,6 +6,9 @@ datatypes:
 constants:
 	gcc -ansi constants.c
 
+longestline2:
+	gcc -ansi longestline2.c
+
 run:
 	./a.out
 
