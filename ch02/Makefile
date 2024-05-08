@@ -9,6 +9,12 @@ constants:
 longestline2:
 	gcc -ansi longestline2.c
 
+hextoint:
+	gcc -ansi hextoint.c
+
+squeeze:
+	gcc -ansi squeeze.c
+
 run:
 	./a.out
 

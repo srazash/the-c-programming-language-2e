@@ -11,11 +11,14 @@ main()
     char value2[5] = "0XAA"; /* 170 */
     char value3[5] = "45"; /* 69 */
     char value4[5] = "0x1a4"; /* 420 */
+    char decsval[5] = "0x4";
 
     printf("%s -> %d\n", value1, htoi(value1));
     printf("%s -> %d\n", value2, htoi(value2));
     printf("%s -> %d\n", value3, htoi(value3));
     printf("%s -> %d\n", value4, htoi(value4));
+
+    printf("%s -> %d\n", decsval, htoi(decsval));
 }
 
 int htoi(char s[])
