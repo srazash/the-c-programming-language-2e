@@ -12,6 +12,7 @@ main()
 
     printf("%s\n", string); /* th qck brwn fx jmps vr th lzy dg */
     printf("%d\n", any(string, 'b')); /* 7 */
+    printf("%d\n", any(string, 'a')); /* -1 */
 }
 
 void squeeze(char str[], int ch[], int size)
