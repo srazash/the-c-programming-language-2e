@@ -15,6 +15,9 @@ hextoint:
 squeeze:
 	gcc -ansi squeeze.c
 
+bitwise:
+	gcc -ansi bitwise.c
+
 run:
 	./a.out
 
