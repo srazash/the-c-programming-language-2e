@@ -32,8 +32,15 @@ unsigned getbits(unsigned x, int p, int n)
 
 unsigned setbits(unsigned x, int p, int n, unsigned y)
 {
-    unsigned newx = x >> (p + 1 - n);
-    newx = x << (p + 1 - n);
-    unsigned newy = ~(~y << n);
-    return newx & newy;
+    unsigned mask = ~(~0 << n);
+    mask = mask << (p + 1 - n);
+
+    x = x & ~mask;
+
+    y = y & ~(~0 << n);
+    y = y << (p + 1 - n);
+
+    x = x | y;
+    
+    return x;
 }
