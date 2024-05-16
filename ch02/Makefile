@@ -18,6 +18,9 @@ squeeze:
 bitwise:
 	gcc -ansi bitwise.c
 
+assexp:
+	gcc -ansi assexp.c
+
 run:
 	./a.out
 
