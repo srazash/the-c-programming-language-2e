@@ -21,6 +21,9 @@ bitwise:
 assexp:
 	gcc -ansi assexp.c
 
+lower:
+	gcc -ansi lower.c
+
 run:
 	./a.out
 
