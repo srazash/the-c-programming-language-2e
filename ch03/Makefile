@@ -3,6 +3,9 @@ MAKEFLAGS += --silent
 binsearch:
 	gcc -ansi binsearch.c
 
+switch:
+	gcc -ansi switch.c
+
 run:
 	./a.out
 
