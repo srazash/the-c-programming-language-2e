@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define OFFSET 'a' - 'A'
+
 void lower(char str[]);
 
 main()
@@ -16,7 +18,7 @@ void lower(char str[])
 
     while (str[i] != '\0')
     {
-        str[i] = (str[i] >= 'A' && str[i] <= 'Z') ? str[i] += 32 : str[i];
+        str[i] = (str[i] >= 'A' && str[i] <= 'Z') ? str[i] += OFFSET : str[i];
         i++;
     }
 }
