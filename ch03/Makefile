@@ -6,6 +6,9 @@ binsearch:
 switch:
 	gcc -ansi switch.c
 
+expand:
+	gcc -ansi expand.c
+
 run:
 	./a.out
 
