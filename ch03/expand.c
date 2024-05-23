@@ -29,8 +29,11 @@ void expand(char s1[], char s2[])
     {
         if (isAlpha(s1[i]))
         {
-            if (s1[i] >= 'A' && s1[i] <= 'Z')
-                ;
+            ;
+        }
+        else if (isNum(s1[i]))
+        {
+            ;
         }
     }
 }
