@@ -2,6 +2,7 @@
 
 #define CASE_OFFSET ('a' - 'A')
 #define DASH '-'
+#define COMMA ','
 #define BLANK ' '
 
 void expand(char s1[], char s2[]);
@@ -18,16 +19,18 @@ main()
     char s2[255];
 
     expand(s1, s2);
+
+    printf("%s -> %s\n", s1, s2);
 }
 
 void expand(char s1[], char s2[])
 {
-    int i, j, k, l;
+    int i, j, k;
 
     char start, end;
     int gap;
 
-    for (i = j = 0; s1[i] != '\0'; i++)
+    for (i = j = 0; s1[i] != '\0';)
     {
         if (isAlpha(s1[i]) && s1[i + 1] == DASH)
         {
@@ -37,24 +40,19 @@ void expand(char s1[], char s2[])
             while (s1[gap + 1] != BLANK)
                 gap++;
 
+            i += (gap - i) + 1;
             end = s1[gap];
 
             if (isUpper(start) || isUpper(end))
                 start = toUpper(start), end = toUpper(end);
 
-            char out[100];
-            for (k = start, l = 0; k <= end; k++)
+            for (k = start; k <= end; k++)
             {
-                out[l] = k, l++;
+                s2[j] = k, j++;
                 if (k != end) {
-                    out[l] = ',', l++;
+                    s2[j] = COMMA, j++;
                 }
             }
-
-            i += gap;
-
-            printf("%c(%d)-%c(%d)\n", start, start, end, end);
-            printf("%s\n", out);
         }
         else if (isNum(s1[i]) && s1[i + 1] == DASH)
         {
@@ -64,21 +62,22 @@ void expand(char s1[], char s2[])
             while (s1[gap + 1] != BLANK)
                 gap++;
 
+            i += (gap - i) + 1;
             end = s1[gap];
 
-            char out[100];
-            for (k = start, l = 0; k <= end; k++)
+            for (k = start; k <= end; k++)
             {
-                out[l] = k, l++;
+                s2[j] = k, j++;
                 if (k != end) {
-                    out[l] = ',', l++;
+                    s2[j] = COMMA, j++;
                 }
             }
-
-            i += gap;
-
-            printf("%c(%d)-%c(%d)\n", start, start, end, end);
-            printf("%s\n", out);
+        }
+        else
+        {
+            s2[j] = s1[i];
+            i++;
+            j++;
         }
     }
 }
