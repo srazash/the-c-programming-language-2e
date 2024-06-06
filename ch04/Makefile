@@ -3,6 +3,9 @@ MAKEFLAGS += --silent
 patternprint:
 	gcc -ansi patternprint.c
 
+atof:
+	gcc -ansi atof.c
+
 run:
 	./a.out
 
