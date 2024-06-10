@@ -7,7 +7,7 @@
 double asciitofloat(char s[])
 {
     double val, power;
-    int i, e, sign, esign;
+    int i, j, e, sign, esign;
 
     for (i = 0; isspace(s[i]); i++) /* skip whitespace */
         ;
@@ -29,13 +29,22 @@ double asciitofloat(char s[])
     }
 
     if (s[i] == 'e' && s[i+1] == '+' || s[i] == 'e' && s[i+1] == '-') {
+        i++;
         esign = (s[i] == '-') ? -1 : 1;
-        i += 2;
+        i++;
 
         for (e = 0; isdigit(s[i]); i++)
-        e = 10 * e + (s[i] - '0');
+            e = 10 * e + (s[i] - '0');
+        
+        if (esign == 1) {
+            for (j = 0; j < e; j++)
+                val *= 10;
+        } else {
+            for (j = 0; j < e; j++)
+                val /= 10;
+        }
 
-        return (sign * val / power) * (esign * e);
+        return (sign * val / power);
     }
 
     return sign * val / power;
