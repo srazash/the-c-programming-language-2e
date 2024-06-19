@@ -6,6 +6,9 @@ patternprint:
 atof:
 	gcc -ansi atof.c
 
+exvar:
+	gcc -ansi exvar.c
+
 run:
 	./a.out
 
